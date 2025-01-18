@@ -71,7 +71,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your_default_secret_key_here')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '*']
+ALLOWED_HOSTS = [ '.vercel.app','localhost',".build_files.sh"]
 
 
 
@@ -141,17 +141,16 @@ WSGI_APPLICATION = 'nsu_api.wsgi.application'
 
 from urllib.parse import urlparse
 
-DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres:[Adebowale123@]@db.mswvncfgajxctjoscago.supabase.co:5432/postgres')
-url = urlparse(DATABASE_URL)
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgress',  
-        'USER': url.username,
-        'PASSWORD': url.password,
-        'HOST': url.hostname,
-        'PORT': url.port,
+        'USER': "postgres.mswvncfgajxctjoscago",
+        'PASSWORD': "Adebowale123@",
+        'HOST': "aws-0-eu-central-1.pooler.supabase.com",
+        'PORT': 5432,
     }
 }
 
